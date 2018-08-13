@@ -1,0 +1,26 @@
+{% extends 'wisesaying/base.html' %}
+
+{% block content %}
+<div class="write">
+    <h2 class="write-header">Write</h2>
+    <div method="POST" class="post-form">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="write-field">
+            <div class="write-label">
+                {{ field.label_tag }}
+            </div>
+            <div class="write-input">
+                {{ field }}
+                {% for error in field.errors %}
+                <p style="color:red">{{ error }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+        <div class="save-btn">
+            <button type="submit">저장하기</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

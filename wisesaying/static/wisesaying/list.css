@@ -1,0 +1,239 @@
+.content-container {
+    max-width: 960px;
+    margin: 50px auto;
+    margin-bottom: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.content-box {
+    width: 40%;
+    background-color: #57606f;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 32px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    padding: 25px;
+    color: white;
+}
+.inner-box {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 20px 0;
+}
+.content-bookname {
+    margin-top: 20px;
+    text-align: right;
+}
+@media all and (max-width: 768px) {
+    .content-box {
+        width: 70%;
+    }
+}
+@media all and (max-width: 480px) {
+    .content-box {
+        width: 90%;
+    }
+}
+.detail-container {
+    max-width: 960px;
+    margin: 50px auto;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+}
+.detail-box {
+    width: 70%;
+    background-color: #57606f;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 32px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    padding: 25px;
+    color: white;
+}
+.detail-inner {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 20px 0;
+}
+.detail-bookname {
+    margin-top: 20px;
+    text-align: right;
+}
+.detail-author {
+    text-align: right;
+}
+@media all and (max-width: 768px) {
+    .detail-box {
+        width: 90%;
+    }
+}
+.signup {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #1e90ff;
+    border-radius: 4px;
+    font-family: 'Nanum Gothic', sans-serif;
+    padding: 20px;
+}
+.siunup-header {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.signup form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.signup form div:last-child {
+    justify-content: center;
+    margin-bottom: 0;
+}
+.signup form div input {
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 6px 8px;
+}
+.signup form div label {
+    color: white;
+    font-size: 20px;
+}
+.signup form button {
+    padding: 8px 16px;
+    width: 70%;
+    border: 1px solid white;
+    background-color: rgb(241, 242, 246);
+    border-radius: 4px;
+    margin: 0 auto;
+}
+.signup form button:hover {
+    background-color: #a4b0be;
+}
+.signup form div:last-child a {
+    color: white;
+}
+@media all and (max-width: 480px) {
+    .signup form div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .signup form div input {
+        width: 80%;
+    }
+    .signup form div label {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+.login {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #1e90ff;
+    border-radius: 4px;
+    font-family: 'Nanum Gothic', sans-serif;
+    padding: 20px;
+}
+.login-header {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.login form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.login form div:last-child {
+    justify-content: center;
+    margin-bottom: 0;
+}
+.login form div input {
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 6px 8px;
+}
+.login form div label {
+    color: white;
+    font-size: 20px;
+}
+.login form button {
+    padding: 8px 16px;
+    width: 70%;
+    border: 1px solid white;
+    background-color: rgb(241, 242, 246);
+    border-radius: 4px;
+    margin: 0 auto;
+}
+.login form button:hover {
+    background-color: #a4b0be;
+}
+.login form div:last-child a {
+    color: white;
+}
+@media all and (max-width: 480px) {
+    .login form div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .login form div input {
+        width: 80%;
+    }
+    .login form div label {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+.write {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #1e90ff;
+    border-radius: 4px;
+    font-family: 'Nanum Gothic', sans-serif;
+    padding: 20px;
+}
+.write-header {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.write-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.write-label {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 16px;
+}
+.write-input {
+    width: 100%;
+}
+.write-input input, .write-input textarea {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 6px 8px;
+    margin: 0 auto;
+}
+.write .save-btn {
+    display: flex;
+    justify-content: center;
+}
+.write .save-btn button {
+    padding: 8px 16px;
+    width: 70%;
+    border: 1px solid white;
+    background-color: rgb(241, 242, 246);
+    border-radius: 4px;
+}
+.write .save-btn button:hover{
+    background-color: #a4b0be;
+}

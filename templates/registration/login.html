@@ -1,0 +1,23 @@
+{% extends 'wisesaying/base.html' %}
+
+{% block content %}
+<div class="login">
+    <h2 class="login-header">Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {%for field in form %}
+            <div>
+                {{ field.label_tag }}
+                {{ field }}
+                {% for error in field.errors %}
+                    <p style="color:red">{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <div>
+            <button type="submit">Login</button>
+        </div>
+        <div><a href="{% url 'wisesaying:signup' %}">회원가입하기</a></div>
+    </form>
+</div>
+{% endblock %}

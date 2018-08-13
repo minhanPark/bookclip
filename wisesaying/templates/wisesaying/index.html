@@ -1,0 +1,27 @@
+{% extends 'wisesaying/base.html' %}
+
+{% block content %}
+    <div class="content-container">
+        {% for word in words_list %}
+        <div class="content-box">
+            <div class="inner-box">
+                {% if word.word|length >= 100 %}
+                    <div class="long-content">
+                        <span class="content">
+                            {{ word.word|truncatechars:100 }}
+                        </span>
+                        <a href="{% url 'wisesaying:detail' word.id %}">더보기</a>
+                    </div>
+                {% else %}
+                    <span class="content">
+                         {{word.word}}
+                    </span>
+                {% endif %}
+            </div>
+            <div class="content-bookname">
+                {{ word.book.book_name }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

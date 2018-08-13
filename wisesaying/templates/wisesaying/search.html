@@ -1,0 +1,44 @@
+{% extends 'wisesaying/base.html' %}
+
+{% block content %}
+    <div class="content-container">
+        {% for word in search_text %}
+        <div class="content-box">
+            <div class="inner-box">
+                {% if word.word|length >= 100 %}
+                    <div class="long-content">
+                        <span class="content">
+                            {{ word.word|truncatechars:100 }}
+                        </span>
+                        <a href="{% url 'wisesaying:detail' word.id %}">더보기</a>
+                    </div>
+                {% else %}
+                    <span class="content">
+                         {{word.word}}
+                    </span>
+                {% endif %}
+            </div>
+            <div class="content-bookname">
+                {{ word.book.book_name }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block pagination %}
+    {% if is_paginated %}
+    <div class="pagination">
+        <div class="page-links">
+            {% if page_obj.has_previous %}
+            <a href="{{ request.path }}?q={{ q }}&page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+            <span class="current-page">
+                {{ page_obj.number }}
+            </span>
+            {% if page_obj.has_next %}
+            <a href="{{ request.path }}?q={{ q }}&page={{ page_obj.next_page_number }}">next</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

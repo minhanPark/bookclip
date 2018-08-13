@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BooKlip</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Pen+Script|Nanum+Gothic" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'wisesaying/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'wisesaying/list.css' %}" />
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <div class="inner-container">
+            <a href="{% url 'wisesaying:index' %}">
+                <span class="logo">BooKlip</span>
+            </a>
+            <span class="search">
+                <form action="{% url 'wisesaying:search' %}" method="get">
+                    <div>
+                        <input type="text" class="search-input" name="q" value="{{q}}" />
+                        <button class="search-btn"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </form>
+            </span>
+            <span class="icons">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">
+                    <div class="actions">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span class="action-text">Logout</span>
+                    </div>
+                </a>
+                <a href="{% url 'wisesaying:add' %}">
+                    <div class="actions">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        <span class="action-text">Write</span>
+                    </div>
+                </a>
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <div class="actions">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span class="action-text">Login</span>
+                    </div>
+                </a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</header>
+{% block content %}
+{% endblock %}
+{% block pagination %}
+    {% if is_paginated %}
+    <div class="pagination">
+        <div class="page-links">
+            {% if page_obj.has_previous %}
+            <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+            <span class="current-page">
+                {{ page_obj.number }}
+            </span>
+            {% if page_obj.has_next %}
+            <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

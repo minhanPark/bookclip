@@ -1,0 +1,21 @@
+{% extends 'wisesaying/base.html' %}
+
+{% block content %}
+<div class="detail-container">
+    <div class="detail-box">
+        <div class="detail-inner">
+            <div class="detail-content">
+                {{ words.word }}
+            </div>
+        </div>
+        <div class="detail-bookname">
+            {{ words.book.book_name }}
+        </div>
+        {% if words.book.author %}
+        <div class="detail-author">
+           - {{ words.book.author }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
